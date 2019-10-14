@@ -5,17 +5,24 @@ election_csv = os.path.join('Resources','election_data.csv')
 khanvotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0}
 correyvotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0} 
 livotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0}
-
+candidates = ['Khan', 'Li', 'Correy']
+county = ['']
 
 
 #def khanpercentage(election_data):
-
+#spreadsheet = csv.DictReader(election_csv)
 with open(election_csv, 'r', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter = ',')   
     for row in reader:
-        if row[1] == 'Khan':
-            khanvotecount.append[row[1]]
-            print('khanvotecount')
+        print(', '.join(row))
+    for candidate in reader:
+        if candidate == 'Khan':
+            print(candidate)
+        #count(Khan)
+
+        #if row[1] == 'Khan':
+         #   khanvotecount.append[row[1]]
+          #  print('khanvotecount')
 
         
             # print(reader)

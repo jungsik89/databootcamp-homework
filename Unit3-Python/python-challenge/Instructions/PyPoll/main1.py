@@ -1,12 +1,14 @@
 import os, csv
 
 election_csv = os.path.join('Resources','election_data.csv')
-
+candidateone = 'Khan'
+log = []
 khanvotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0}
 correyvotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0} 
 livotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0}
 candidates = ['Khan', 'Li', 'Correy']
 county = ['']
+total_votes = 0
 
 
 #def khanpercentage(election_data):
@@ -14,10 +16,18 @@ county = ['']
 with open(election_csv, 'r', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter = ',')   
     for row in reader:
-        print(', '.join(row))
-    for candidate in reader:
-        if candidate == 'Khan':
-            print(candidate)
+        if row[2] == candidateone:
+            log.append(candidateone)
+            khanvotecount = candidateone.count('Khan')
+            print(khanvotecount)
+        #total_votes = len(column)
+        #print(total_votes)
+        #total_votes += 1
+        #print(total_votes)
+       # print(', '.join(row))
+        
+    #for candidate in reader:
+    
         #count(Khan)
 
         #if row[1] == 'Khan':

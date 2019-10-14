@@ -9,6 +9,7 @@ livotecount = {'votecount': 0, 'win percentage': 0.0, 'totalwin': 0}
 candidates = ['Khan', 'Li', 'Correy']
 county = ['']
 total_votes = 0
+pollresult = []
 
 
 #def khanpercentage(election_data):

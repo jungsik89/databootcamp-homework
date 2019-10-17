@@ -77,4 +77,13 @@ print(f"Financial Analysis\n--------------------\nTotal Months: {total_month}\nT
 Greatest Increase in Profits: Year-> {increase_date} Amount-> ${greatest_increase_p}\nGreatest Decrease in Profits: Year-> {decrease_date} Amount-> ${greatest_decrease_p}")
 
 
+with open('financial_analysis.txt', 'w') as text:
+    text.write("Financial Analysis\n")
+    text.write("---------------------------------------\n")
+    text.write("Total Months: " + str(total_month))
+    text.write("\nTotal: $" + str(total_revenue))
+    text.write("\nAverage Change: $" + str(average_change))
+    text.write("\nGreatest Increase in Profits: Year->: " + str(increase_date) + " Amount->: $" + str(greatest_increase_p))
+    text.write("\nGreatest Decrease in Profits: Year->: " + str(decrease_date) + " Amount->: $" + str(greatest_decrease_p))
+
 

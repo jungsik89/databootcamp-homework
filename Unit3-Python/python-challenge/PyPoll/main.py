@@ -1,4 +1,5 @@
-import os, csv
+import os
+import csv
 
 election_csv = os.path.join('Resources','election_data.csv')
 
@@ -65,11 +66,11 @@ with open(election_csv, 'r', newline='') as csvfile:
 
     winner = max(totalcountdict, key=totalcountdict.get)
 
-    totallist = []
-    totallist.append(khanvotetotal)
-    totallist.append(correyvotetotal)
-    totallist.append(livotetotal)
-    totallist.append(otooleytotal)
+    #totallist = []
+    #totallist.append(khanvotetotal)
+    #totallist.append(correyvotetotal)
+    #totallist.append(livotetotal)
+    #totallist.append(otooleytotal)
     #print(totallist)
 
     #winnervalue = max(totallist)

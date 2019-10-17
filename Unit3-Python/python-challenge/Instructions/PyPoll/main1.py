@@ -4,7 +4,9 @@ election_csv = os.path.join('Resources','election_data.csv')
 
 vote_count = 0
 candidate_list = []
+khanlist = []
 
+candidateone = 'Khan'
 
 #def khanpercentage(election_data):
 #spreadsheet = csv.DictReader(election_csv)
@@ -13,10 +15,17 @@ with open(election_csv, 'r', newline='') as csvfile:
     csv_header = next(reader)
     for row in reader:
         vote_count = vote_count + 1
+        if row[2]==candidateone:
+            khanlist.append(candidateone)
+        
+        candidate_list.append(row[2])
 
+    khanvotetotal = khanlist.count('Khan')
+    #for i in set(candidate_list):
 
-
-print(vote_count)
+print(khanvotetotal)
+#print(candidate_list)
+#print(vote_count)
         #total_votes = len(column)
         #print(total_votes)
         #total_votes += 1

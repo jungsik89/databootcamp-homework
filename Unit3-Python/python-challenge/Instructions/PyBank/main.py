@@ -29,22 +29,32 @@ with open(bank_csv, newline="",) as csvfile:
         last_profit = int(row[1])
         #last profit equal to the last row. 
         monthly_change = last_profit - initial_profit
+
         monthly_change_list.append(monthly_change) 
         initial_profit = last_profit
-     
-        total_change = total_change + monthly_change
         
-        greatest_increase_p = max(monthly_change_list)
-  
+monthly_change_list.pop(0)
+total_change = total_change + (sum([int(i) for i in monthly_change_list]))
+        
 
-        increase_date = date_list[monthly_change_list.index(greatest_increase_p)]
+greatest_increase_p = max(monthly_change_list)
+greatest_decrease_p = min(monthly_change_list)
+
+increase_date = date_list[monthly_change_list.index(greatest_increase_p)]
+decrease_date = date_list[monthly_change_list.index(greatest_decrease_p)]
      
+        
+        
+      
         #print(sum(monthly_change_list))
+#print(int(monthly_change))
 print(int(total_change))      
 print(str(monthly_change_list))
-print(int(greatest_increase_p))
-print(str(increase_date))
+#print(str(profit_list))
 
+
+#print(int(greatest_increase_p))
+#print(str(increase_date))
 #print(int(final_profit))
 #print(str(date_list))
 #print(int(total_change))
@@ -61,8 +71,8 @@ print(str(increase_date))
 #print(len(month))
 #print(len(profloss))
 
-print("Financial Analysis")
-print("--------------------")
+print(f"Financial Analysis\n--------------------\nTotal Months: {total_month}\nTotal: ${total_revenue}\nAverage Change: ${total_change}\n\
+Greatest Increase in Profits: Year-> {increase_date} Amount-> ${greatest_increase_p}\nGreatest Decrease in Profits: Year-> {decrease_date} Amount-> ${greatest_decrease_p}")
 
 
 

@@ -50,14 +50,34 @@ with open(election_csv, 'r', newline='') as csvfile:
     otooleypercentage = ((otooleytotal/vote_count)*100)
     otooleypercentage = round(otooleypercentage,5)
 
+    Khan = int(khanvotetotal)
+    Correy = int(correyvotetotal)
+    Li = int(livotetotal)
+    OTooley = int(otooleytotal)
+
     totalcountdict = {}
     totalcountdict.update(Khan = int(khanvotetotal))
     totalcountdict.update(Correy = int(correyvotetotal))
     totalcountdict.update(Li = int(livotetotal))
-    totalcountdict.update({"O'Tooley" : int(otooleytotal)})
+    totalcountdict.update(OTooley = int(otooleytotal))
 
-            
-    print(totalcountdict)
+    
+
+    winner = totalcountdict.get(max(totalcountdict))
+    print(winner)
+
+    totallist = []
+    totallist.append(khanvotetotal)
+    totallist.append(correyvotetotal)
+    totallist.append(livotetotal)
+    totallist.append(otooleytotal)
+    print(totallist)
+
+    #winnervalue = max(totallist)
+   # if winnervalue == 
+
+    #if winnervalue = totalcountdic        
+    #print(totalcountdict)
 
     #khanpercentage = (khanvotetotal/vote_count)*100
    

@@ -5,9 +5,17 @@ election_csv = os.path.join('Resources','election_data.csv')
 vote_count = 0
 candidate_list = []
 khanlist = []
+correylist = []
+lilist = []
+otooleylist = []
+khanvotetotal = 0
 
 candidateone = 'Khan'
+candidatetwo = 'Correy'
+candidatethree = 'Li'
+candidatefour = "O'Tooley"
 
+# if(name_to_check == row[0]):
 #def khanpercentage(election_data):
 #spreadsheet = csv.DictReader(election_csv)
 with open(election_csv, 'r', newline='') as csvfile:
@@ -15,23 +23,33 @@ with open(election_csv, 'r', newline='') as csvfile:
     csv_header = next(reader)
     for row in reader:
         vote_count = vote_count + 1
-        if row[2]==candidateone:
-            khanlist.append(candidateone)
-        
         candidate_list.append(row[2])
-
+        if row[2] == candidateone:
+            khanlist.append(candidateone)
+        if row[2]==candidatetwo:
+            correylist.append(candidatetwo)
+        if row[2]==candidatethree:
+            lilist.append(candidatethree)
+        if row[2]==candidatefour:
+            otooleylist.append(candidatefour)
+        
     khanvotetotal = khanlist.count('Khan')
+    correyvotetotal = correylist.count('Correy')
+    livotetotal = lilist.count('Li')
+    otooleytotal = otooleylist.count("O'Tooley")
+    #khanpercentage = (khanvotetotal/vote_count)*100
     #for i in set(candidate_list):
 
+##print(khanvotetotal)
 print(khanvotetotal)
-#print(candidate_list)
+print(livotetotal)
 #print(vote_count)
         #total_votes = len(column)
         #print(total_votes)
         #total_votes += 1
         #print(total_votes)
        # print(', '.join(row))
-print(f"Election Results\n-------------------------\nTotal Votes: {vote_count}\n------------------------\nKhan: ")     
+#print(f"Election Results\n-------------------------\nTotal Votes: {vote_count}\n------------------------\nKhan: ")     
     #for candidate in reader:
     
         #count(Khan)

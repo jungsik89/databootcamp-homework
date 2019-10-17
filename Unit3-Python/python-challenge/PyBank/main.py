@@ -29,53 +29,22 @@ with open(bank_csv, newline="",) as csvfile:
         last_profit = int(row[1])
         #last profit equal to the last row. 
         monthly_change = last_profit - initial_profit
-
-        monthly_change_list.append(monthly_change) 
+        #calculate change amount
+        monthly_change_list.append(monthly_change)
+        #append these to a list 
         initial_profit = last_profit
-        
+        #initial profit is assigned the last value, loop restarts 
+
 monthly_change_list.pop(0)
 total_change = total_change + (sum([int(i) for i in monthly_change_list]))
 average_change = total_change/(total_month-1)
-        
-
 greatest_increase_p = max(monthly_change_list)
 greatest_decrease_p = min(monthly_change_list)
-
 increase_date = date_list[monthly_change_list.index(greatest_increase_p)]
 decrease_date = date_list[monthly_change_list.index(greatest_decrease_p)]
      
-        
-        
-      
-        #print(sum(monthly_change_list))
-#print(int(monthly_change))
-#print(int(total_change))      
-#print(str(monthly_change_list))
-#print(int(average_change))
-#print(str(profit_list))
-
-
-#print(int(greatest_increase_p))
-#print(str(increase_date))
-#print(int(final_profit))
-#print(str(date_list))
-#print(int(total_change))
-##print(int(initial_profit))
-#print(str(monthly_change_list))
-#print(str(profit_list))
-#print(str(date_list))
-        #list(csvreader)
-        #print(csvreader)
-#month.append(row[0])
-#profloss.append(row[1])
-#nettotal = 
-
-#print(len(month))
-#print(len(profloss))
-
 print(f"Financial Analysis\n--------------------\nTotal Months: {total_month}\nTotal: ${total_revenue}\nAverage Change: ${average_change}\n\
 Greatest Increase in Profits: Year-> {increase_date} Amount-> ${greatest_increase_p}\nGreatest Decrease in Profits: Year-> {decrease_date} Amount-> ${greatest_decrease_p}")
-
 
 with open('financial_analysis.txt', 'w') as text:
     text.write("Financial Analysis\n")
@@ -86,4 +55,25 @@ with open('financial_analysis.txt', 'w') as text:
     text.write("\nGreatest Increase in Profits: Year->: " + str(increase_date) + " Amount->: $" + str(greatest_increase_p))
     text.write("\nGreatest Decrease in Profits: Year->: " + str(decrease_date) + " Amount->: $" + str(greatest_decrease_p))
 
-
+#print(sum(monthly_change_list))
+#print(int(monthly_change))
+#print(int(total_change))      
+#print(str(monthly_change_list))
+#print(int(average_change))
+#print(str(profit_list))
+#print(int(greatest_increase_p))
+#print(str(increase_date))
+#print(int(final_profit))
+#print(str(date_list))
+#print(int(total_change))
+##print(int(initial_profit))
+#print(str(monthly_change_list))
+#print(str(profit_list))
+#print(str(date_list))
+#list(csvreader)
+#print(csvreader)
+#month.append(row[0])
+#profloss.append(row[1])
+#nettotal = ?
+#print(len(month))
+#print(len(profloss))

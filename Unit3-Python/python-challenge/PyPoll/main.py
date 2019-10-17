@@ -66,7 +66,31 @@ with open(election_csv, 'r', newline='') as csvfile:
 
     winner = max(totalcountdict, key=totalcountdict.get)
 
-    #totallist = []
+print(f"\
+    Election Results\n-------------------------\nTotal Votes: {vote_count}\n-------------------------\
+    \nKhan: {khanpercentage}% ({khanvotetotal})\nCorrey: {correypercentage}% ({correyvotetotal})\nLi: {lipercentage}% ({livotetotal})\
+    \nO'Tooley: {otooleypercentage}% ({otooleytotal})\n-------------------------\
+    \nWinner: {winner} ")     
+    
+with open('election_result.txt', 'w') as text:
+    text.write("Election Results\n")
+    text.write("---------------------------------------\n")
+    text.write("Total Vote: " + str(vote_count))
+    text.write("\n---------------------------------------\n")
+    text.write("Khan: " + str(khanpercentage) + "%" + ", " + "(" + str(khanvotetotal) + ")")
+    text.write("\nCorrey: " + str(correypercentage) + "%" + ", " + "(" + str(correyvotetotal) + ")")
+    text.write("\nLi: " + str(lipercentage) + "%" + ", " + "(" + str(livotetotal) + ")")
+    text.write("\nO'Tooley: " + str(otooleypercentage) + "%" + ", " + "(" + str(otooleytotal) + ")")
+    text.write("\n---------------------------------------\n")
+    text.write("The winner is: " + winner )
+    text.write("\n---------------------------------------\n")
+
+    
+# if(name_to_check == row[0]):
+#def khanpercentage(election_data):
+#spreadsheet = csv.DictReader(election_csv)
+
+ #totallist = []
     #totallist.append(khanvotetotal)
     #totallist.append(correyvotetotal)
     #totallist.append(livotetotal)
@@ -91,12 +115,8 @@ with open(election_csv, 'r', newline='') as csvfile:
         #total_votes += 1
         #print(total_votes)
        # print(', '.join(row))
-print(f"\
-    Election Results\n-------------------------\nTotal Votes: {vote_count}\n-------------------------\
-    \nKhan: {khanpercentage}% ({khanvotetotal})\nCorrey: {correypercentage}% ({correyvotetotal})\nLi: {lipercentage}% ({livotetotal})\
-    \nO'Tooley: {otooleypercentage}% ({otooleytotal})\n-------------------------\
-    \nWinner: {winner} ")     
-    #for candidate in reader:
+
+       #for candidate in reader:
         #count(Khan)
         #if row[1] == 'Khan':
          #   khanvotecount.append[row[1]]
@@ -113,18 +133,3 @@ print(f"\
    # for row in range(row_count):
     #    If 
 #print(f"this is {Candidate}")
-
-with open('election_result.txt', 'w') as text:
-    text.write("Election Results\n")
-    text.write("---------------------------------------\n")
-    text.write("Total Vote: " + str(vote_count))
-    text.write("\n---------------------------------------\n")
-    text.write("Khan: " + str(khanpercentage) + "%" + ", " + "(" + str(khanvotetotal) + ")")
-    text.write("\nCorrey: " + str(correypercentage) + "%" + ", " + "(" + str(correyvotetotal) + ")")
-    text.write("\nLi: " + str(lipercentage) + "%" + ", " + "(" + str(livotetotal) + ")")
-    text.write("\nO'Tooley: " + str(otooleypercentage) + "%" + ", " + "(" + str(otooleytotal) + ")")
-    text.write("\n---------------------------------------\n")
-    text.write("The winner is: " + winner )
-    text.write("\n---------------------------------------\n")
-
-    

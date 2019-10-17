@@ -50,22 +50,32 @@ with open(election_csv, 'r', newline='') as csvfile:
     otooleypercentage = ((otooleytotal/vote_count)*100)
     otooleypercentage = round(otooleypercentage,5)
 
+    totalcountdict = {}
+    totalcountdict.update(Khan = int(khanvotetotal))
+    totalcountdict.update(Correy = int(correyvotetotal))
+    totalcountdict.update(Li = int(livotetotal))
+    totalcountdict.update({"O'Tooley" : int(otooleytotal)})
+
+            
+    print(totalcountdict)
+
     #khanpercentage = (khanvotetotal/vote_count)*100
-    #for i in set(candidate_list):
+   
 
 ##print(khanvotetotal)
-print(khanpercentage)
-print(khanvotetotal)
-print(vote_count)
+#print(khanpercentage)
+#print(khanvotetotal)
+#print(vote_count)
         #total_votes = len(column)
         #print(total_votes)
         #total_votes += 1
         #print(total_votes)
        # print(', '.join(row))
 print(f"\
-    Election Results\n-------------------------\nTotal Votes: {vote_count}\n------------------------\
+    Election Results\n-------------------------\nTotal Votes: {vote_count}\n-------------------------\
     \nKhan: {khanpercentage}% ({khanvotetotal})\nCorrey: {correypercentage}% ({correyvotetotal})\nLi: {lipercentage}% ({livotetotal})\
-    \nO'Tooley: {otooleypercentage}% ({otooleytotal})")     
+    \nO'Tooley: {otooleypercentage}% ({otooleytotal})\n-------------------------\
+    \nWinner: ")     
     #for candidate in reader:
     
         #count(Khan)

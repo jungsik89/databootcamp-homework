@@ -61,17 +61,16 @@ with open(election_csv, 'r', newline='') as csvfile:
     totalcountdict.update(Li = int(livotetotal))
     totalcountdict.update(OTooley = int(otooleytotal))
 
-    
+    #print(totalcountdict)
 
-    winner = totalcountdict.get(max(totalcountdict))
-    print(winner)
+    winner = max(totalcountdict, key=totalcountdict.get)
 
     totallist = []
     totallist.append(khanvotetotal)
     totallist.append(correyvotetotal)
     totallist.append(livotetotal)
     totallist.append(otooleytotal)
-    print(totallist)
+    #print(totallist)
 
     #winnervalue = max(totallist)
    # if winnervalue == 
@@ -95,7 +94,7 @@ print(f"\
     Election Results\n-------------------------\nTotal Votes: {vote_count}\n-------------------------\
     \nKhan: {khanpercentage}% ({khanvotetotal})\nCorrey: {correypercentage}% ({correyvotetotal})\nLi: {lipercentage}% ({livotetotal})\
     \nO'Tooley: {otooleypercentage}% ({otooleytotal})\n-------------------------\
-    \nWinner: ")     
+    \nWinner: {winner} ")     
     #for candidate in reader:
     
         #count(Khan)

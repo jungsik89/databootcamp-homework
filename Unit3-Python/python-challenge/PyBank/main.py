@@ -12,6 +12,7 @@ total_revenue = 0
 total_change = 0
 initial_profit = 0
 
+
 #Open csv
 with open(bank_csv, newline="",) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -54,6 +55,8 @@ with open('financial_analysis.txt', 'w') as text:
     text.write("\nAverage Change: $" + str(average_change))
     text.write("\nGreatest Increase in Profits: Year->: " + str(increase_date) + " Amount->: $" + str(greatest_increase_p))
     text.write("\nGreatest Decrease in Profits: Year->: " + str(decrease_date) + " Amount->: $" + str(greatest_decrease_p))
+
+
 
 #print(sum(monthly_change_list))
 #print(int(monthly_change))
